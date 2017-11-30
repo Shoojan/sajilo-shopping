@@ -45,7 +45,7 @@
 								<th></th>
 								<th>Name</th>
 								<th>Brand</th>
-								<th>Fixed Price</th>
+								<th>Price</th>
 								<th>Quantity</th>
 								<th></th>
 							</tr>
