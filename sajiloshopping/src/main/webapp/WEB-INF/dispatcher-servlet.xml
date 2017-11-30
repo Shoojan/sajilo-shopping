@@ -9,7 +9,7 @@
    ">
 
 	<context:component-scan base-package="com.sujan.sajiloshopping.controller"/>
-	<context:component-scan base-package="com.sujan.shoppingbackend.DAOImpl"/>
+	<context:component-scan base-package="com.sujan.shoppingbackend"/>
 	
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

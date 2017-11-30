@@ -23,10 +23,17 @@
 
 <script>
 	window.menu = '${title}';
+	window.contextRoot = '${contextRoot}';
 </script>
 
-<!-- Bootstrap core CSS -->
+<!-- Bootstrap Core CSS	 -->
+<link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Cyborg Theme -->
 <link href="${css}/bootstrap-cyborg-theme.css" rel="stylesheet">
+
+<!-- Bootstrap DataTables -->
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -61,6 +68,11 @@
 			<c:if test="${userClickContact == true}">
 				<%@include file="contact.jsp"%>
 			</c:if>
+			
+			<!-- Loads only when user clicks "showProduct" -->
+			<c:if test="${userClickShowSingleProduct == true}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
 
 			<!-- Footer -->
 			<%@include file="./shared/footer.jsp"%>
@@ -68,6 +80,12 @@
 			<!-- Bootstrap core JavaScript -->
 			<script src="${jquery}/jquery.min.js"></script>
 			<script src="${js}/bootstrap.bundle.min.js"></script>
+			
+			<!-- DataTable Plugin -->
+			<script src="${jquery}/jquery.dataTables.js"></script>
+			
+			<!-- DataTable Bootstrap Script -->
+			<script src="${js}/dataTables.bootstrap4.js"></script>
 
 			<!-- Self Coded javascript -->
 			<script src="${js}/myapp.js"></script>
