@@ -26,6 +26,8 @@ public class Category {
 	@Column(name = "is_active")
 	private boolean active = true;
 	
+	
+	//Getter and Setter
 	public int getId() {
 		return id;
 	}

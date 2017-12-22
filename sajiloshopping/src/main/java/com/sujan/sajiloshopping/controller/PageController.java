@@ -111,4 +111,12 @@ public class PageController {
 		mv.addObject("userClickShowSingleProduct",true);
 		return mv;
 	}
+	
+	/* Having similiar mapping to our flow id */
+	@RequestMapping(value = "/register")
+	public ModelAndView register() {
+		ModelAndView mv = new ModelAndView("page");
+		return mv;
+	}
+	
 }
