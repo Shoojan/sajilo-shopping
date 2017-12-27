@@ -24,7 +24,8 @@ public class HibernateConfig {
 	private final static String DATABASE_USERNAME = "sa";
 	private final static String DATABASE_PASSWORD = "";
 	
-	@Bean
+	//dataSourceJDBC bean will be available
+	@Bean("dataSourceJDBC")
 	protected DataSource getDataSource() {
 		
 		BasicDataSource dataSource = new BasicDataSource();

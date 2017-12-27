@@ -20,6 +20,20 @@ $(function(){
 			break;
 	}
 	
+	
+	//To tackle the CSRF token
+	var token = $('meta[name="_csrf"]').attr('content');
+	var header = $('meta[name="_csrf_header"]').attr('content');
+	
+	if(token.length > 0 && header.length > 0){
+		
+		//set token header for AJAX request
+		$(document).ajaxSend(function(e,xhr,options){
+			xhr.setRequestHeader(header,token);
+		});
+	}
+	
+	
 	//code for jquery datatable
 	var $table = $('#productListTable');
 
@@ -76,11 +90,16 @@ $(function(){
 					mRender: function(data,type,row){
 						var str = '';
 						str += '<a href="'+ window.contextRoot +'/show/'+ data +'/product" class="btn btn-secondary">View</a>';
-
-						if(row.quantity < 1){
-							str += ' <a href="javascript:void(0)" class="btn btn-danger disabled"><strike>Add to Cart</strike></a>';
-						}else{
-							str += ' <a href="'+ window.contextRoot +'/cart/add/'+ data +'/product" class="btn btn-success">Add to Cart</a>';
+						if(userRole == 'ADMIN'){
+							str += ' <a href="'+ window.contextRoot +'/manage/'+ data +'/product" class="btn btn-warning">Edit</a>';
+						}
+						
+						if(userRole == 'USER'){
+							if(row.quantity < 1){
+								str += ' <a href="javascript:void(0)" class="btn btn-danger disabled"><strike>Cart</strike></a>';
+							}else{
+								str += ' <a href="'+ window.contextRoot +'/cart/add/'+ data +'/product" class="btn btn-success">Cart</a>';
+							}
 						}
 						
 						return str;
@@ -256,6 +275,42 @@ $(function(){
 		});
 	}
 	//---------------------------------------------------------------
+	
+	/*
+	 * Validation Code for loginForm
+	 * */
+	var loginForm = $('#loginForm');
+	if(loginForm.length){
+		loginForm.validate({
+			rules:{
+				email:{
+					required:true,
+					email:true
+				},
+				password:{
+					required:true
+				}
+			},
+			messages:{
+				email:{
+					required:'Please Enter Username!',
+					email:'Invalid Email id!'
+				},
+				description:{
+					required:'Password Incorrect!'
+				}
+			},
+			errorElement:'em',
+			errorPlacement: function(error, element){
+				//add the class of help-block
+				error.addClass('help-block');
+				//add error element after input element
+				error.insertAfter(element);
+			}
+		});
+	}
+	
+	
 });
 
 

@@ -157,25 +157,28 @@
 			<h3>Available Products</h3>
 		</div>
 		<div class="col-xs-12 col-md-12">
-			<div style="overflow:auto">
-				<!-- Products table for Admin -->
-				<table id="adminProductsTable" class="table table-striped table-bordered">
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>&#160;</th>
-							<th>Name</th>
-							<th>Brand</th>
-							<th>Quantity</th>
-							<th>Unit Price</th>
-							<th>Active</th>
-							<th>Edit</th>
-						</tr>
-					</thead>
+			<div class="container-fluid">
+				<div class="table-responsive">
+					<!-- Products table for Admin -->
+					<table id="adminProductsTable" class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>&#160;</th>
+								<th>Name</th>
+								<th>Brand</th>
+								<th>Quantity</th>
+								<th>Unit Price</th>
+								<th>Active</th>
+								<th>Edit</th>
+							</tr>
+						</thead>
+						
+					</table>
 					
-				</table>
-				
+				</div>
 			</div>
 		</div>
+		
 	</div>
 </div>

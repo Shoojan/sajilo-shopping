@@ -71,6 +71,11 @@ ol.breadcrumb li a:hover {
 	width: 130px;
 }
 
+.table-responsive{
+	overflow-x: inherit;
+}
+
+
 /*For toggle switch*/
 .switch{
 	width: 50px;
