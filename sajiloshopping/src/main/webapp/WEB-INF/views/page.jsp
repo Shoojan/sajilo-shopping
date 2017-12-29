@@ -40,6 +40,9 @@
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
 
+<!-- Font Awesome -->
+<link href="${css}/font-awesome.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -80,8 +83,11 @@
 			<c:if test="${userClickManageProducts == true}">
 				<%@include file="manageProducts.jsp"%>
 			</c:if>
-			
-			
+						
+			<!-- Loads only when user clicks "showCart" -->
+			<c:if test="${userClickShowCart == true}">
+				<%@include file="cart.jsp"%>
+			</c:if>
 			
 
 			<!-- Footer -->

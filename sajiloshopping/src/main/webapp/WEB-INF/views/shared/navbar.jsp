@@ -35,14 +35,14 @@
         </security:authorize>
         
         <security:authorize access="isAuthenticated()">
-	        <li class="dropdown">
+	        <li class="dropdown" id="userCart">
 	        	<a href="javascript:void(0)" class="btn btn-info dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
 	        		${userModel.fullName}
 	        	</a>
 	        	<ul class="dropdown-menu bg-light">
 	        		<security:authorize access="hasAuthority('USER')">
 		        		<li>
-		        			<a href="${contextRoot}/cart">Cart
+		        			<a href="${contextRoot}/cart/show">Cart
 		        				<span class="badge badge-secondary"> 
 		        					${userModel.cart.cartLines} 
 		        				</span> - &#8377; ${userModel.cart.grandTotal}

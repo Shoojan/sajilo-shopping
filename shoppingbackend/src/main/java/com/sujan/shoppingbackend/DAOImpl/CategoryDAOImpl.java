@@ -3,7 +3,6 @@ package com.sujan.shoppingbackend.DAOImpl;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,11 +19,11 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	@Override
 	public List<Category> list() {
-
 		String selectActiveCategory = "FROM Category WHERE active = :active"; //here Category is entity_name not table_name 
-		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory);
-		query.setParameter("active", true);
-		return query.getResultList();
+		return sessionFactory.getCurrentSession()
+				.createQuery(selectActiveCategory)
+					.setParameter("active", true)
+						.getResultList();
 	}
 
 	/*
@@ -68,7 +67,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	public boolean delete(Category category) {
 		category.setActive(false);
 		try {
-			// add category to database table
+			// soft-delete category to database table
 			sessionFactory.getCurrentSession().update(category);
 			return true;
 		} catch (Exception ex) {

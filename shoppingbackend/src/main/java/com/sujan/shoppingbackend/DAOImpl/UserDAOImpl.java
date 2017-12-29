@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sujan.shoppingbackend.DAO.UserDAO;
 import com.sujan.shoppingbackend.DTO.Address;
-import com.sujan.shoppingbackend.DTO.Cart;
 import com.sujan.shoppingbackend.DTO.User;
 
 @Repository("userDAO")
@@ -35,18 +34,6 @@ public class UserDAOImpl implements UserDAO {
 	public boolean addAddress(Address address) {
 		try {
 			sessionFactory.getCurrentSession().persist(address);
-			return true;
-		}
-		catch(Exception ex) {
-			ex.printStackTrace();
-			return false;
-		}
-	}
-
-	@Override
-	public boolean updateCart(Cart cart) {
-		try {
-			sessionFactory.getCurrentSession().update(cart);
 			return true;
 		}
 		catch(Exception ex) {
