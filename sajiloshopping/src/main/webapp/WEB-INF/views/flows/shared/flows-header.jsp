@@ -30,7 +30,7 @@
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <!-- Bootstrap Cyborg Theme -->
-<link href="${css}/bootstrap-cyborg-theme.css" rel="stylesheet">
+<link href="${css}/bootstrap-slate-theme.css" rel="stylesheet">
 
 <!-- Bootstrap DataTables -->
 <link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
@@ -41,11 +41,5 @@
 </head>
 
 <body>
-
-	<div class="wrapper">
-
-		<!-- Navigation -->
-		<%@include file="flows-navbar.jsp"%>
-
-		<!-- Page Content -->
-		<div class="content">
+	<!-- Navigation -->
+	<%@include file="flows-navbar.jsp"%>

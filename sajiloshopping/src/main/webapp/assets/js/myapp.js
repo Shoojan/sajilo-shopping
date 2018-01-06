@@ -92,16 +92,16 @@ $(function(){
 					nSortable: false,
 					mRender: function(data,type,row){
 						var str = '';
-						str += '<a href="'+ window.contextRoot +'/show/'+ data +'/product" class="btn btn-secondary">View</a>';
+						str += '<a href="'+ window.contextRoot +'/show/'+ data +'/product" class="btn btn-info"><span class="fa fa-eye"></span></a>';
 						if(userRole == 'ADMIN'){
-							str += ' <a href="'+ window.contextRoot +'/manage/'+ data +'/product" class="btn btn-warning">Edit</a>';
+							str += ' <a href="'+ window.contextRoot +'/manage/'+ data +'/product" class="btn btn-warning"><span class="fa fa-edit"></span></a>';
 						}
 						
 						if(userRole == 'USER'){
 							if(row.quantity < 1){
-								str += ' <a href="javascript:void(0)" class="btn btn-danger disabled"><strike>Cart</strike></a>';
+								str += ' <a href="javascript:void(0)" class="btn btn-danger disabled"><strike><span class="fa fa-shopping-cart"></span></strike></a>';
 							}else{
-								str += ' <a href="'+ window.contextRoot +'/cart/add/'+ data +'/product" class="btn btn-success">Cart</a>';
+								str += ' <a href="'+ window.contextRoot +'/cart/add/'+ data +'/product" class="btn btn-success"><span class="fa fa-shopping-cart"></span></a>';
 							}
 						}
 						
@@ -196,7 +196,8 @@ $(function(){
 					mRender: function(data,type,row){
 						var str='';
 						str += '<a href="'+window.contextRoot+'/manage/'+data+'/product" class="btn btn-warning">';
-						str += 'Edit</a>';
+						str += '<span class="fa fa-edit"></span>';
+						str += '</a>';
 						return str;
 					}
 				}
@@ -209,7 +210,7 @@ $(function(){
 					
 					var checkbox = $(this);
 					var checked = checkbox.prop('checked');
-					var dMsg = (checked)?"Activate the product?":"Deactivate the product";
+					var dMsg = (checked)?"Do you want to activate the product?":"Do you want to deactivate the product?";
 					
 					var value = checkbox.prop('value');
 					

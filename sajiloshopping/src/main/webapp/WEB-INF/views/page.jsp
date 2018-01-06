@@ -32,7 +32,7 @@
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <!-- Bootstrap Cyborg Theme -->
-<link href="${css}/bootstrap-cyborg-theme.css" rel="stylesheet">
+<link href="${css}/bootstrap-slate-theme.css" rel="stylesheet">
 
 <!-- Bootstrap DataTables -->
 <link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
@@ -41,7 +41,7 @@
 <link href="${css}/myapp.css" rel="stylesheet">
 
 <!-- Font Awesome -->
-<link href="${css}/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -87,8 +87,10 @@
 			<!-- Loads only when user clicks "showCart" -->
 			<c:if test="${userClickShowCart == true}">
 				<%@include file="cart.jsp"%>
-			</c:if>
-			
+			</c:if>			
+
+
+
 
 			<!-- Footer -->
 			<%@include file="./shared/footer.jsp"%>

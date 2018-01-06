@@ -36,22 +36,22 @@
         
         <security:authorize access="isAuthenticated()">
 	        <li class="dropdown" id="userCart">
-	        	<a href="javascript:void(0)" class="btn btn-info dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+	        	<a href="javascript:void(0)" class="btn btn-outline-info dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	        		${userModel.fullName}
 	        	</a>
-	        	<ul class="dropdown-menu bg-light">
+	        	<ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
 	        		<security:authorize access="hasAuthority('USER')">
-		        		<li>
+		        		<li class="dropdown-item">
 		        			<a href="${contextRoot}/cart/show">Cart
 		        				<span class="badge badge-secondary"> 
 		        					${userModel.cart.cartLines} 
 		        				</span> - &#8377; ${userModel.cart.grandTotal}
 		        			</a>
 		        		</li>
-		        		<hr>
+		        		<div class="dropdown-divider"></div>
 	        		</security:authorize>
 					
-					<li>
+					<li class="dropdown-item">
 	        			<a href="${contextRoot}/perform-logout">Logout</a>
 	        		</li> 
 	        	</ul>

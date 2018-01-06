@@ -30,7 +30,7 @@
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <!-- Bootstrap Cyborg Theme -->
-<link href="${css}/bootstrap-cyborg-theme.css" rel="stylesheet">
+<link href="${css}/bootstrap-slate-theme.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -57,7 +57,8 @@
 			<%-- Will be displayed if the credentials are wrong --%>
 			<c:if test="${not empty message}">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-4"></div>
+					<div class="col-md-*">
 						<div class="alert alert-danger">${message}</div>
 					</div>	
 				</div>
@@ -66,43 +67,44 @@
 			<%-- Will be displayed if the users have logged out --%>
 			<c:if test="${not empty logout}">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-4"></div>
+					<div class="col-md-*">
 						<div class="alert alert-danger">${logout}</div>
 					</div>	
 				</div>
 			</c:if>
 			
 			<div class="row">
-				<div class="col-md-5"></div>
+				<div class="col-md-4"></div>
 				<div class="col-md-*">
-					<div class="card card-primary">
+					<div class="card border-success">
 						<div class="card-header">
-							<h4>Personal Details</h4>
+							<h3>Log In</h3>
 						</div>
 						<div class="card-body">
 							<form action="${contextRoot}/login" class="form" method="POST" id="loginForm">
-								<div class="form-group">
-									<label for="email">Email:</label>
-									<div>
+								<div class="form-group row">
+									<label class="col-md-4" for="email">Email:</label>
+									<div class="col-md-8">
 										<input type="text" class="form-control" name="email" id="username" placeholder="Your email id..." />
 									</div>
 								</div>
-								<div class="form-group">
-									<label for="password">Password:</label>
-									<div>
-										<input type="text" class="form-control" name="password" id="password" placeholder="password..." />
+								<div class="form-group row">
+									<label class="col-md-4" for="password">Password:</label>
+									<div class="col-md-8">
+										<input type="password" class="form-control" name="password" id="password" placeholder="password..." />
 									</div>
 								</div>
 								<div class="form-group">
 									<div>
-										<input type="submit" value="Login" class="btn btn-primary"/>
+										<input type="submit" value="Login" class="btn btn-success"/>
 										<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 									</div>
 								</div>
 							</form>
 						</div>
-						<div class="card-footer">
-							<a class="navbar-brand" href="${contextRoot}/register">Register here</a>
+						<div class="card-footer"> <h5>No Account?  Register
+							<a class="navbar-brand btn-outline-success" href="${contextRoot}/register"> here</a></h5>
 						</div>
 					</div>
 				</div>

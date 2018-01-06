@@ -4,7 +4,7 @@
 		<div class="row">
 			<!-- Column to display the personal details -->
 			<div class="col-sm-6">
-				<div class="card card-primary">
+				<div class="card border-warning mb-3">
 					<div class="card-header">
 						<h4>Personal Details</h4>
 					</div>
@@ -25,7 +25,7 @@
 			
 			<!-- Column to display the Address details -->
 			<div class="col-sm-6">
-				<div class="card card-primary">
+				<div class="card border-warning mb-3">
 					<div class="card-header">
 						<h4>Address Details</h4>
 					</div>

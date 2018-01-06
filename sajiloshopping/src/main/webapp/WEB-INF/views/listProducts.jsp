@@ -49,7 +49,7 @@
 										<th>Brand</th>
 										<th>Price</th>
 										<th>Quantity</th>
-										<th></th>
+										<th>Products Action</th>
 									</tr>
 								</thead>
 							</table>

@@ -109,11 +109,21 @@ public class ProductDAOImpl implements ProductDAO {
 	public List<Product> getLatestActiveProducts(int count) {
 		return sessionFactory
 				.getCurrentSession()
-					.createQuery("FROM Product WHERE active = :active ORDER BY id",Product.class)
+					.createQuery("FROM Product WHERE active = :active ORDER BY id DESC",Product.class)
 						.setParameter("active", true)
 							.setFirstResult(0)
 							.setMaxResults(count)
 								.getResultList();
+	}
+
+	@Override
+	public List<Product> getMostViewedProducts(int count) {
+		return sessionFactory.getCurrentSession()
+				.createQuery("FROM Product WHERE active = :active ORDER BY views DESC",Product.class)
+					.setParameter("active", true)
+						.setFirstResult(0)
+						.setMaxResults(count)
+							.getResultList();
 	}
 
 }
